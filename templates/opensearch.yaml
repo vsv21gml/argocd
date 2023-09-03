@@ -19,11 +19,6 @@ spec:
     helm:
       valueFiles:
         - values.yaml
-      values: |-
-        image:
-          repository: "vsv21gml/opensearch"
-          tag: "latest"
-          pullPolicy: "Always"
   sources: []
   project: default
   syncPolicy:
