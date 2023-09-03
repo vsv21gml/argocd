@@ -1,0 +1,34 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: opensearch
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: opensearch-dashboards:vsv21gml/opensearch-dashboards:latest
+    argocd-image-updater.argoproj.io/opensearch-dashboards.helm.image-tag: image.tag
+    argocd-image-updater.argoproj.io/opensearch-dashboards.update-strategy: digest
+spec:
+  destination:
+    name: ''
+    namespace: opensearch
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: ''
+    repoURL: 'https://opensearch-project.github.io/helm-charts'
+    targetRevision: 2.12.0
+    chart: opensearch-dashboards
+    helm:
+      valueFiles:
+        - values.yaml
+      values: |-
+        image:
+          repository: "vsv21gml/opensearch-dashboards"
+          tag: "latest"
+          pullPolicy: "Always"
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+  syncOptions:
+    - CreateNamespace=true
