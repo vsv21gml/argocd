@@ -1,2 +1,3 @@
 image:
-  tag: 0.0.1
+  name: vsv21gml/nginx
+  tag: 0.0.2

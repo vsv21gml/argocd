@@ -13,7 +13,7 @@ spec:
         run: mynginx
     spec:
       containers:
-      - image: vsv21gml/nginx:{{ .Values.image.tag }}
+      - image: {{ .Values.image.name }}:{{ .Values.image.tag }}
         name: mynginx
         ports:
         - containerPort: 80
