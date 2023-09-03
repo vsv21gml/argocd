@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: opensearch
+  name: opensearch-dashboards
   annotations:
     argocd-image-updater.argoproj.io/image-list: opensearch-dashboards:vsv21gml/opensearch-dashboards:latest
     argocd-image-updater.argoproj.io/opensearch-dashboards.helm.image-tag: image.tag
