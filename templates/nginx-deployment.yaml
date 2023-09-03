@@ -2,9 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mynginx
-  annotations:
-    argocd-image-updater.argoproj.io/image-list: vsv21gml/nginx
-    argocd-image-updater.argoproj.io/org_app.update-strategy: latest
 spec:
   replicas: 7
   selector:
@@ -16,7 +13,7 @@ spec:
         run: mynginx
     spec:
       containers:
-      - image: vsv21gml/nginx:0.0.1
+      - image: vsv21gml/nginx:{{ .Values.image.tag }}
         name: mynginx
         ports:
         - containerPort: 80
