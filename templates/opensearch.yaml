@@ -3,7 +3,7 @@ kind: Application
 metadata:
   name: opensearch
   annotations:
-    argocd-image-updater.argoproj.io/image-list: opensearch:vsv21gml/opensearch:latest
+    argocd-image-updater.argoproj.io/image-list: opensearch=vsv21gml/opensearch:latest
     argocd-image-updater.argoproj.io/opensearch.helm.image-tag: image.tag
     argocd-image-updater.argoproj.io/opensearch.update-strategy: digest
 spec:

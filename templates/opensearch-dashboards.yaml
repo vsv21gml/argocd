@@ -3,7 +3,7 @@ kind: Application
 metadata:
   name: opensearch-dashboards
   annotations:
-    argocd-image-updater.argoproj.io/image-list: opensearch-dashboards:vsv21gml/opensearch-dashboards:latest
+    argocd-image-updater.argoproj.io/image-list: opensearch-dashboards=vsv21gml/opensearch-dashboards:latest
     argocd-image-updater.argoproj.io/opensearch-dashboards.helm.image-tag: image.tag
     argocd-image-updater.argoproj.io/opensearch-dashboards.update-strategy: digest
 spec:
