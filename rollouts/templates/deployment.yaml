@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: rollouts-demo
-        image: zioduck/rollouts-demo
+        image: {{ .Values.image.name }}:{{ .Values.image.tag }}
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
