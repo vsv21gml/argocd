@@ -23,5 +23,5 @@ spec:
     blueGreen:
       activeService: rollout-bluegreen-active
       previewService: rollout-bluegreen-preview
-      autoPromotionEnabled: false
+      autoPromotionEnabled: {{ .Values.image.autoPromotionEnabled }}
       previewReplicaCount: 1
