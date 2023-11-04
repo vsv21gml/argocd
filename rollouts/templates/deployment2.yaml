@@ -7,11 +7,11 @@ spec:
   revisionHistoryLimit: 8
   selector:
     matchLabels:
-      app: rollout-bluegreen
+      app: rollout-bluegreen2
   template:
     metadata:
       labels:
-        app: rollout-bluegreen
+        app: rollout-bluegreen2
     spec:
       containers:
       - name: rollouts-demo
@@ -21,6 +21,6 @@ spec:
         - containerPort: 8080
   strategy:
     blueGreen:
-      activeService: rollout-bluegreen-active
-      previewService: rollout-bluegreen-preview
+      activeService: rollout-bluegreen2-active
+      previewService: rollout-bluegreen2-preview
       autoPromotionEnabled: false
